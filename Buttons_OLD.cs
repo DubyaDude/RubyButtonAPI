@@ -94,7 +94,7 @@ namespace Ruby.ButtonAPI
             Q_Functions.getBackButton().setLocation(2, 0);
 
 
-            //Q_Functions is initially set as a QMNestedButton, so we want to instantiate 
+            //Q_Functions is initially set as a QMToggleButton, so we want to instantiate 
             //a new one with all of the properties that we want
             Q_F_Gain = new QMToggleButton(
                 //BtnMenu -> this has 3 possible types, "ShortcutMenu", "UserInteractMenu" or a QMNestedButton (button that opens up to other buttons)
