@@ -11,3 +11,8 @@ Source Code: https://github.com/DubyaDude/ruby-button...ons_OLD.cs
 So, without further ado, Here are screenshots of people using the ButtonAPI (proven to be used by simple checks that I had in place).
 Featuring: RubyClient (By DubyaDude), Notorious (By Meap), DoomsDay (By Avto & Raiken), and Totally Not A Client (By Basic)
 https://imgur.com/a/75K6wNM
+
+TO CLEAR OUT SOME MISCONCEPTIONS:
+1. This is not the only 'Button API' out there, this is just my personal variation.
+2. I created everything from scratch myself BESIDES the reflections which is completely credited to Slaynash (creator of VRCTools).
+3. I wasn't the first one to do it lol.
