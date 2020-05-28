@@ -16,7 +16,7 @@ namespace RubyButtonAPI
 	//will not be using melonloader/unhollower
 
 	//Look here for a useful example guide:
-	//https://github.com/DubyaDude/RubyButtonAPI/blob/master/Buttons_OLD.cs
+	//https://github.com/DubyaDude/RubyButtonAPI/blob/master/RubyButtonAPI_Old.cs
 
     public static class QMButtonAPI
     {
