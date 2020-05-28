@@ -5,7 +5,7 @@ So my client got leaked a long long time ago and one of the things that seemed t
 So, to even out the playing field a bit, I'm releasing the clean source code of the old ButtonAPI that was leaked back in the day with commits of explaining basic usage. 
 
 DO NOT DM ME ASKING FOR HELP, FIGURE OUT ISSUES ON YOUR OWN ~I just ask you give credit where credit is due <3
-Source Code: https://github.com/DubyaDude/ruby-button...ons_OLD.cs
+Source Code: https://github.com/DubyaDude/RubyButtonAPI/blob/master/RubyButtonAPI.cs
  - Credit to Slaynash for creating VRCTools and inspiring me to create this, and creating a lot of reflections that were used to accomplish this!
 
 So, without further ado, Here are screenshots of people using the ButtonAPI (proven to be used by simple checks that I had in place).
