@@ -3,6 +3,7 @@ using Il2CppSystem.Reflection;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnhollowerRuntimeLib;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
@@ -502,7 +503,7 @@ namespace RubyButtonAPI
                     shortcutMenu = quickmenu.transform.Find("UserInteractMenu").gameObject;
 
                 
-                FieldInfo[] fis = Il2CppTypeOf<QuickMenu>.Type.GetFields(BindingFlags.NonPublic | BindingFlags.Instance).Where((fi) => fi.FieldType == Il2CppTypeOf<GameObject>.Type).ToArray();
+                FieldInfo[] fis = Il2CppType.Of<QuickMenu>().GetFields(BindingFlags.NonPublic | BindingFlags.Instance).Where((fi) => fi.FieldType == Il2CppType.Of<GameObject>()).ToArray();
                 //MelonLoader.MelonModLogger.Log("[QMStuff] GameObject Fields in QuickMenu:");
                 int count = 0;
                 foreach (FieldInfo fi in fis)
