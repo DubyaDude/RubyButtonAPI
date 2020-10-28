@@ -478,7 +478,7 @@ namespace RubyButtonAPI
         {
             if (vrcuimInstance == null)
             {
-                vrcuimInstance = VRCUiManager.field_Protected_Static_VRCUiManager_0;
+                vrcuimInstance = VRCUiManager.prop_VRCUiManager_0;
             }
             return vrcuimInstance;
         }
