@@ -11,7 +11,10 @@ using VRC.UI;
 
 namespace RubyButtonAPI
 {
-    //Firstly, thanks to Emilia for helping me update this to the unhollower.
+    //Credits:
+    //Emilia - Porting it to MelonLoader and helping to keep the git updated
+    //Tritn - Helping to keep the git updated
+
     //This adds a couple of new functions compared to the old one, however,
     //like the last one, I will not be providing any support as I will
     //personally not be using melonloader/unhollower in the near future.
