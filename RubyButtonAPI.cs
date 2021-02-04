@@ -11,18 +11,18 @@ using VRC.UI;
 
 namespace RubyButtonAPI
 {
-	//Firstly, thanks to Emilia for helping me update this to the unhollower.
-	//This adds a couple of new functions compared to the old one, however,
-	//like the last one, I will not be providing any support as I will
-	//personally not be using melonloader/unhollower in the near future.
+    //Firstly, thanks to Emilia for helping me update this to the unhollower.
+    //This adds a couple of new functions compared to the old one, however,
+    //like the last one, I will not be providing any support as I will
+    //personally not be using melonloader/unhollower in the near future.
 
-	//Look here for a useful example guide:
-	//https://github.com/DubyaDude/RubyButtonAPI/blob/master/RubyButtonAPI_Old.cs
+    //Look here for a useful example guide:
+    //https://github.com/DubyaDude/RubyButtonAPI/blob/master/RubyButtonAPI_Old.cs
 
     public static class QMButtonAPI
     {
-    	//REPLACE THIS STRING SO YOUR MENU DOESNT COLLIDE WITH OTHER MENUS
-    	public static string identifier = "REPLACEME";
+        //REPLACE THIS STRING SO YOUR MENU DOESNT COLLIDE WITH OTHER MENUS
+        public static string identifier = "REPLACEME";
         public static Color mBackground = Color.red;
         public static Color mForeground = Color.white;
         public static Color bBackground = Color.red;
@@ -79,8 +79,7 @@ namespace RubyButtonAPI
 
         public void setToolTip(string buttonToolTip)
         {
-            button.GetComponent<UiTooltip>().text = buttonToolTip;
-            button.GetComponent<UiTooltip>().alternateText = buttonToolTip;
+            button.GetComponent<UiTooltip>().field_Public_String_0 = buttonToolTip;
         }
 
         public void DestroyMe()
@@ -146,7 +145,7 @@ namespace RubyButtonAPI
         {
             button.GetComponent<Button>().onClick = new Button.ButtonClickedEvent();
             if (buttonAction != null)
-            button.GetComponent<Button>().onClick.AddListener(UnhollowerRuntimeLib.DelegateSupport.ConvertDelegate<UnityAction>(buttonAction));
+                button.GetComponent<Button>().onClick.AddListener(UnhollowerRuntimeLib.DelegateSupport.ConvertDelegate<UnityAction>(buttonAction));
         }
 
         public override void setBackgroundColor(Color buttonBackgroundColor, bool save = true)
@@ -205,8 +204,8 @@ namespace RubyButtonAPI
             btnOn = button.transform.Find("Toggle_States_Visible/ON").gameObject;
             btnOff = button.transform.Find("Toggle_States_Visible/OFF").gameObject;
 
-            initShift[0] = -4;
-            initShift[1] = 0;
+            initShift[0] = -3;
+            initShift[1] = -1;
             setLocation(btnXLocation, btnYLocation);
 
             setOnText(btnTextOn);
@@ -273,16 +272,16 @@ namespace RubyButtonAPI
 
             button.GetComponent<Button>().onClick = new Button.ButtonClickedEvent();
             button.GetComponent<Button>().onClick.AddListener(UnhollowerRuntimeLib.DelegateSupport.ConvertDelegate<UnityAction>((System.Action)(() =>
-          {
-              if (btnOn.activeSelf)
-              {
-                  setToggleState(false, true);
-              }
-              else
-              {
-                  setToggleState(true, true);
-              }
-          })));
+            {
+                if (btnOn.activeSelf)
+                {
+                    setToggleState(false, true);
+                }
+                else
+                {
+                    setToggleState(true, true);
+                }
+            })));
         }
 
 
@@ -485,6 +484,8 @@ namespace RubyButtonAPI
 
         // Cache the FieldInfo for getting the current page. Hope to god this works!
         private static FieldInfo currentPageGetter;
+        private static GameObject shortcutMenu;
+        private static GameObject userInteractMenu;
 
         // Show a Quick Menu page via the Page Name. Hope to god this works!
         public static void ShowQuickmenuPage(string pagename)
@@ -502,7 +503,7 @@ namespace RubyButtonAPI
                 if (!shortcutMenu.activeInHierarchy)
                     shortcutMenu = quickmenu.transform.Find("UserInteractMenu").gameObject;
 
-                
+
                 FieldInfo[] fis = Il2CppType.Of<QuickMenu>().GetFields(BindingFlags.NonPublic | BindingFlags.Instance).Where((fi) => fi.FieldType == Il2CppType.Of<GameObject>()).ToArray();
                 //MelonLoader.MelonModLogger.Log("[QMStuff] GameObject Fields in QuickMenu:");
                 int count = 0;
@@ -535,6 +536,13 @@ namespace RubyButtonAPI
             pageTransform.gameObject.SetActive(true);
 
             currentPageGetter.SetValue(quickmenu, pageTransform.gameObject);
+
+            if (shortcutMenu == null)
+                shortcutMenu = QuickMenu.prop_QuickMenu_0.transform.Find("ShortcutMenu")?.gameObject;
+
+            if (userInteractMenu == null)
+                userInteractMenu = QuickMenu.prop_QuickMenu_0.transform.Find("UserInteractMenu")?.gameObject;
+
             if (pagename == "ShortcutMenu")
             {
                 SetIndex(0);
@@ -546,6 +554,8 @@ namespace RubyButtonAPI
             else
             {
                 SetIndex(-1);
+                shortcutMenu?.SetActive(false);
+                userInteractMenu?.SetActive(false);
             }
         }
 
