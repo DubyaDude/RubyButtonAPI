@@ -563,9 +563,10 @@ namespace RubyButtonAPI
         }
 
         // Set the current Quick Menu index
+        // VRChat Build 1101 - github.com/MintLily
         public static void SetIndex(int index)
         {
-            GetQuickMenuInstance().field_Private_Int32_0 = index;
+            GetQuickMenuInstance().field_Private_EnumNPublicSealedvaUnShEmUsEmNoCaMo_nUnique_0 = (QuickMenu.EnumNPublicSealedvaUnShEmUsEmNoCaMo_nUnique)index;
         }
     }
 }
