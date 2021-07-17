@@ -1,3 +1,7 @@
+**AS STATED BELOW, CREDIT IS REQUIRED. ON GITHUB THIS GENERALLY MEANS CREDIT IN A RATHER OBVIOUS PLACE IN THE ROOT DIRECTORY (USUALLY README/LICENSE/CREDITS FILE)**
+
+
+
 Heyo, it's me DubyaDude.
 
 So my client got leaked a long long time ago and one of the things that seemed to have gotten ripped out was a ButtonAPI that I created for myself when first creating RubyClient about more than a half a year ago. It seems to be that some people have been using this API without giving any credit where credit is due. 
