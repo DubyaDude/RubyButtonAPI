@@ -83,6 +83,7 @@ namespace RubyButtonAPI
         public void setToolTip(string buttonToolTip)
         {
             button.GetComponent<UiTooltip>().field_Public_String_0 = buttonToolTip;
+            button.GetComponent<UiTooltip>().field_Public_String_1 = buttonToolTip;
         }
 
         public void DestroyMe()
